@@ -19,26 +19,26 @@
                 <!-- The following menu items will be hidden on both SM and XS screen sizes -->
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link [routerLink]="['home']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" [attr.tabindex]="rla.isActive ? 0 : -1" [class.list-item-active]="rla.isActive">
-                        <mat-icon>home</mat-icon>
+                        <mat-icon>map</mat-icon>
                         &nbsp;Inicio
                     </a>
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link [routerLink]="['us']" routerLinkActive #rla1="routerLinkActive" [active]="rla1.isActive" [attr.tabindex]="rla1.isActive ? 0 : -1" [class.list-item-active]="rla1.isActive">
-                        <mat-icon>supervisor_account</mat-icon>
-                        &nbsp;Nosotros
+                        <mat-icon>person</mat-icon>
+                        &nbsp;Perfil
                     </a>
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link [routerLink]="['embarcadero']" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive" [attr.tabindex]="rla2.isActive ? 0 : -1" [class.list-item-active]="rla2.isActive">
-                        <!-- <mat-icon svgIcon="embarcadero"></mat-icon> -->
-                        &nbsp;Embarcadero
+                        <mat-icon>group</mat-icon>
+                        &nbsp;Organizaciones
                     </a>
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link [routerLink]="['contact']" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive" [attr.tabindex]="rla3.isActive ? 0 : -1" [class.list-item-active]="rla3.isActive">
-                        <mat-icon>account_box</mat-icon>
-                        &nbsp;Contáctenos
+                        <mat-icon>power_settings_new</mat-icon>
+                        &nbsp;Desconectarse
                     </a>
                 </nav>
             </div>
@@ -55,26 +55,27 @@
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link (click)="sidenav.toggle()" [routerLink]="['home']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" [attr.tabindex]="rla.isActive ? 0 : -1" [class.list-item-active]="rla.isActive">
-                        <mat-icon>home</mat-icon>
-                        &nbsp;Home
+                        <mat-icon>map</mat-icon>
+                        &nbsp;Inicio
                     </a>
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link (click)="sidenav.toggle()" [routerLink]="['us']" routerLinkActive #rla1="routerLinkActive" [active]="rla1.isActive" [attr.tabindex]="rla1.isActive ? 0 : -1" [class.list-item-active]="rla1.isActive">
-                        <mat-icon>supervisor_account</mat-icon>
-                        &nbsp;Nosotros
+                        <mat-icon>person</mat-icon>
+                        &nbsp;Perfil
                     </a>
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link (click)="sidenav.toggle()" [routerLink]="['embarcadero']" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive" [attr.tabindex]="rla2.isActive ? 0 : -1" [class.list-item-active]="rla2.isActive">
-                        <!-- <mat-icon svgIcon="embarcadero"></mat-icon> -->
-                        &nbsp;embarcadero
+                        <mat-icon>group</mat-icon>
+                        &nbsp;Organizaciones
                     </a>
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link (click)="sidenav.toggle()" [routerLink]="['contact']" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive" [attr.tabindex]="rla3.isActive ? 0 : -1" [class.list-item-active]="rla3.isActive">
-                        <mat-icon>account_box</mat-icon>
-                        &nbsp;Contáctenos
+                        <mat-icon>power_settings_new</mat-icon>
+                        &nbsp;Desconectarse
+                        <mat-icon>power_settings_new</mat-icon>
                     </a>
                 </nav>
             </mat-nav-list>
