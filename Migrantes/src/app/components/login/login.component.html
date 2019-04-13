@@ -30,13 +30,13 @@
             <mat-card-content>
                 <form (ngSubmit)="Registro()">
                     <p>
-                        <mat-form-field hideRequiredMarker]="true">
+                        <mat-form-field [hideRequiredMarker]="true">
                             <input matInput placeholder="Nombre" [formControl]="nombre" type="text" required>
                             <mat-error *ngIf="nombre.invalid">{{getErrorMessage()}}</mat-error>
                         </mat-form-field>
                     </p>
                     <p>
-                        <mat-form-field hideRequiredMarker]="true">
+                        <mat-form-field [hideRequiredMarker]="true">
                             <input matInput placeholder="Apellido" type="text" [formControl]="apellido" required>
                             <mat-error *ngIf="apellido.invalid">{{getErrorMessage()}}</mat-error>
                         </mat-form-field>
