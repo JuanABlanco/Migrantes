@@ -1,8 +1,6 @@
-<div class="topbar">
-</div>
 <mat-divider></mat-divider>
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar background-color="gray" class="example-toolbar">
+    <mat-toolbar class="example-toolbar back">
         <mat-toolbar-row>
             <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
                 <mat-icon>menu</mat-icon>
@@ -75,7 +73,6 @@
                     <a mat-tab-link (click)="sidenav.toggle()" [routerLink]="['contact']" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive" [attr.tabindex]="rla3.isActive ? 0 : -1" [class.list-item-active]="rla3.isActive">
                         <mat-icon>power_settings_new</mat-icon>
                         &nbsp;Desconectarse
-                        <mat-icon>power_settings_new</mat-icon>
                     </a>
                 </nav>
             </mat-nav-list>

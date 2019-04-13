@@ -11,11 +11,12 @@ import {MediaMatcher} from '@angular/cdk/layout';
 
 export class NavbarComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) 
   {
-    // iconRegistry.addSvgIcon(
-    //     'embarcadero',
-    //     sanitizer.bypassSecurityTrustResourceUrl('assets/icons/Embarcadero-logo.svg'));
+    iconRegistry.addSvgIcon(
+        'embarcadero',
+    sanitizer.bypassSecurityTrustResourceUrl('assets/icons/Embarcadero-logo.svg'));
 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -25,8 +26,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
-  private _mobileQueryListener: () => void;
-  
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
