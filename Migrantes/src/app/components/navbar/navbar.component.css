@@ -1,0 +1,66 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.toolbar-flex {
+    flex: 1 1 auto;
+}
+
+.logo img {
+    width: 100%;
+    padding-top: 1vh;
+    padding-left: 3.5vw;
+    height: 5vh;
+}
+
+.container .four.columns {
+    width: 220px;
+}
+
+.mat-tab-link {
+    text-decoration: none;
+    color: black;
+    align-self: flex-start;
+    float: right;
+}
+
+.mat-tab-link:hover {
+    color: green;
+}
+
+.navigation-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* .mat-tab-link-active {
+    font-weight: bold;
+    color: mat-color(accent, darker) !important;
+    background: rgba(0, 0, 0, 0.04);
+} */
+
+.topbar {
+    height: 5vh;
+}
+
+@media(max-width: 959px) {
+    mat-toolbar {
+        border-radius: 0px;
+    }
+}
+
+.example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    align-items: flex-start;
+}
+
+.example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    /* flex: 1 0 auto; */
+    align-items: flex-start;
+}
