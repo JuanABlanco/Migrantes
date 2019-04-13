@@ -8,13 +8,14 @@ import {MediaMatcher} from '@angular/cdk/layout';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) 
   {
-    iconRegistry.addSvgIcon(
-        'embarcadero',
-        sanitizer.bypassSecurityTrustResourceUrl('assets/icons/Embarcadero-logo.svg'));
+    // iconRegistry.addSvgIcon(
+    //     'embarcadero',
+    //     sanitizer.bypassSecurityTrustResourceUrl('assets/icons/Embarcadero-logo.svg'));
 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

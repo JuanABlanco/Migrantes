@@ -22,11 +22,17 @@ import {MatListModule} from '@angular/material/list'
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatInputModule} from '@angular/material/input';
+import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
+//flex layout
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,8 @@ import {MatInputModule} from '@angular/material/input';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

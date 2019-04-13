@@ -7,12 +7,12 @@
             <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>
+            <!-- <span>
               <div class="logo">
                   <img src="../assets/navbar/logo.png"
                     class="logo_standard">
               </div>
-            </span>
+            </span> -->
             <span class="example-spacer"></span>
             <span class="toolbar-flex"></span>
             <div fxShow="true" fxHide.lt-md="true" fxLayout="row">
@@ -31,7 +31,7 @@
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link [routerLink]="['embarcadero']" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive" [attr.tabindex]="rla2.isActive ? 0 : -1" [class.list-item-active]="rla2.isActive">
-                        <mat-icon svgIcon="embarcadero"></mat-icon>
+                        <!-- <mat-icon svgIcon="embarcadero"></mat-icon> -->
                         &nbsp;Embarcadero
                     </a>
                 </nav>
@@ -67,7 +67,7 @@
                 </nav>
                 <nav mat-tab-nav-bar>
                     <a mat-tab-link (click)="sidenav.toggle()" [routerLink]="['embarcadero']" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive" [attr.tabindex]="rla2.isActive ? 0 : -1" [class.list-item-active]="rla2.isActive">
-                        <mat-icon svgIcon="embarcadero"></mat-icon>
+                        <!-- <mat-icon svgIcon="embarcadero"></mat-icon> -->
                         &nbsp;embarcadero
                     </a>
                 </nav>
@@ -82,7 +82,6 @@
         <mat-sidenav-content>
             <router-outlet></router-outlet>
             <mat-divider></mat-divider>
-            <app-footer></app-footer>
         </mat-sidenav-content>
     </mat-sidenav-container>
 
