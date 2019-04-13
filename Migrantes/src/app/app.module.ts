@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 
 //HttpClient
@@ -22,11 +25,25 @@ import {MatListModule} from '@angular/material/list'
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatInputModule} from '@angular/material/input';
+import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import {MatSliderModule} from '@angular/material/slider';
+
+//flex layout
+import { FlexLayoutModule } from "@angular/flex-layout";
+
+import {environment} from "../environments/environment";
+import { OrganizationsComponent } from './components/organizations/organizations.component';
 
 
+export const config = environment.firebaseConfig;
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    NavbarComponent,
+    OrganizationsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,7 +65,12 @@ import {MatInputModule} from '@angular/material/input';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FlexLayoutModule,
+    MatSliderModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(config),
   ],
   providers: [],
   bootstrap: [AppComponent]
