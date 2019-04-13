@@ -13,15 +13,20 @@ export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required, Validators.minLength(8)]);
 
+  nombre = new FormControl('', [Validators.required]);
+  apellido = new FormControl('', [Validators.required]);
+  rEmail = new FormControl('', [Validators.required, Validators.email]);
+  rPassword = new FormControl('', [Validators.required, Validators.minLength(8)]);
+  confirmPassword = new FormControl('', [Validators.required, Validators.minLength(8)]);
   hide = true;
   constructor() { }
 
   ngOnInit() {
   }
-  submit(){
-    //Auth
+  login(){
+
   }
-  register(){
+  Registro(){
 
   }
   getErrorMessage() {
@@ -30,6 +35,22 @@ export class LoginComponent implements OnInit {
         '';
   }
   getErrorPassword(){
+    return this.password.hasError('required') ? 'debe ingresar un valor':
+    this.password.hasError('minlength') ? 'Debe tener al menos 8 caracteres' :
+    '';
+    
+  }
+  getErrorNombre(){
+    return this.password.hasError('required') ? 'debe ingresar un valor':
+    '';
+    
+  }
+  getErrorApellido(){
+    return this.password.hasError('required') ? 'debe ingresar un valor':
+    '';
+    
+  }
+  getErrorConfirm(){
     return this.password.hasError('required') ? 'debe ingresar un valor':
     this.password.hasError('minlength') ? 'Debe tener al menos 8 caracteres' :
     '';
