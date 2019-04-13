@@ -2,6 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
+//HttpClient
+import { HttpClientModule } from "@angular/common/http";
+
+//Forms
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+//rutas
+import { APP_ROUTING } from './app.routes'
+
 //Material Modules
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,7 +44,11 @@ import {MatInputModule} from '@angular/material/input';
     MatListModule,
     MatGridListModule,
     MatProgressBarModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
