@@ -30,7 +30,7 @@ a {
 }
 
 .mat-tab-link:hover {
-    color: green;
+    color: rgb(255, 255, 255);
 }
 
 .navigation-items {
