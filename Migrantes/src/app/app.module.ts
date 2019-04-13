@@ -27,17 +27,23 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 //flex layout
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import {environment} from "../environments/environment";
+import { OrganizationsComponent } from './components/organizations/organizations.component';
+
+
 export const config = environment.firebaseConfig;
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    OrganizationsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -61,6 +67,7 @@ export const config = environment.firebaseConfig;
     ReactiveFormsModule,
     APP_ROUTING,
     FlexLayoutModule,
+    MatSliderModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(config),
