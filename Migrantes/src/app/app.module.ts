@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 
 //HttpClient
@@ -28,6 +31,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 //flex layout
 import { FlexLayoutModule } from "@angular/flex-layout";
 
+import {environment} from "../environments/environment";
+export const config = environment.firebaseConfig;
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +60,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     FormsModule,
     ReactiveFormsModule,
     APP_ROUTING,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(config),
   ],
   providers: [],
   bootstrap: [AppComponent]
