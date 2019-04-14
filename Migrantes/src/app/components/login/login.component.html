@@ -8,14 +8,14 @@
                         <form (ngSubmit)="Login() ">
                             <p>
                                 <mat-form-field [hideRequiredMarker]="true ">
-                                    <input matInput placeholder="Ingresa tu correo " [formControl]="email " required>
+                                    <input [(ngModel)]="email.value" matInput placeholder="Ingresa tu correo " [formControl]="email " required>
                                     <mat-error *ngIf="email.invalid ">{{getErrorMessage()}}</mat-error>
                                 </mat-form-field>
                             </p>
 
                             <p>
                                 <mat-form-field [hideRequiredMarker]="true " hintLabel="Máximo 10 caracteres ">
-                                    <input matInput maxlength="10 " placeholder="Enter your password " [formControl]="password " [type]="hide ? 'password' : 'text' " required>
+                                    <input  [(ngModel)]="password.value" matInput maxlength="10 " placeholder="Enter your password " [formControl]="password " [type]="hide ? 'password' : 'text' " required>
                                     <mat-icon matSuffix (click)="hide=! hide ">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                     <mat-error *ngIf="password.invalid ">{{getErrorPassword()}}</mat-error>
                                 </mat-form-field>
@@ -33,39 +33,39 @@
                         <form (ngSubmit)="Registro() ">
                             <p>
                                 <mat-form-field [hideRequiredMarker]="true ">
-                                    <input matInput placeholder="Nombre " [formControl]="nombre " type="text " required>
+                                    <input  [(ngModel)]="nombre.value" matInput placeholder="Nombre " [formControl]="nombre " type="text " required>
                                     <mat-error *ngIf="nombre.invalid ">{{getErrorMessage()}}</mat-error>
                                 </mat-form-field>
                             </p>
                             <p>
                                 <mat-form-field [hideRequiredMarker]="true ">
-                                    <input matInput placeholder="Apellido " type="text " [formControl]="apellido " required>
+                                    <input  [(ngModel)]="apellido.value" matInput placeholder="Apellido " type="text " [formControl]="apellido " required>
                                     <mat-error *ngIf="apellido.invalid ">{{getErrorMessage()}}</mat-error>
                                 </mat-form-field>
                             </p>
                             <p>
                                 <mat-form-field [hideRequiredMarker]="true ">
-                                    <input matInput placeholder="Ingresa tu correo " [formControl]="rEmail " required>
+                                    <input  [(ngModel)]="rEmail.value" matInput placeholder="Ingresa tu correo " [formControl]="rEmail " required>
                                     <mat-error *ngIf="rEmail.invalid ">{{getErrorMessage()}}</mat-error>
                                 </mat-form-field>
                             </p>
 
                             <p>
                                 <mat-form-field [hideRequiredMarker]="true " hintLabel="Máximo 10 caracteres ">
-                                    <input matInput maxlength="10 " placeholder="Ingresa tu password " [formControl]="rPassword " [type]="hide ? 'password' : 'text' " required>
+                                    <input  [(ngModel)]="rPassword.value" matInput maxlength="10 " placeholder="Ingresa tu password " [formControl]="rPassword " [type]="hide ? 'password' : 'text' " required>
                                     <mat-icon matSuffix (click)="hide=! hide ">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                                    <mat-error *ngIf="password.invalid ">{{getErrorPassword()}}</mat-error>
+                                    <mat-error *ngIf="rPassword.invalid ">{{getErrorPassword()}}</mat-error>
                                 </mat-form-field>
                             </p>
                             <p>
                                 <mat-form-field [hideRequiredMarker]="true " hintLabel="Máximo 10 caracteres ">
-                                    <input matInput maxlength="10 " placeholder="Confirma tu password " [formControl]="confirmPassword " [type]="hide ? 'password' : 'text' " required>
+                                    <input  [(ngModel)]="confirmPassword.value" matInput maxlength="10 " placeholder="Confirma tu password " [formControl]="confirmPassword " [type]="hide ? 'password' : 'text' " required>
                                     <mat-icon matSuffix (click)="hide=! hide ">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                                    <mat-error *ngIf="password.invalid ">{{getErrorPassword()}}</mat-error>
+                                    <mat-error *ngIf="confirmPassword.invalid ">{{getErrorPassword()}}</mat-error>
                                 </mat-form-field>
                             </p>
                             <div class="button ">
-                                <button type="submit " [disabled]="email.valid && password.valid? false : true " mat-button>Registro</button>
+                                <button type="submit " [disabled]="rEmail.valid && rPassword.valid && nombre.valid && apellido.valid? false : true " mat-button>Registro</button>
                             </div>
 
                         </form>

@@ -1,50 +1,67 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+
+//Modelos:
+import {User} from '../models/user'
+
+//Observables:
+import {switchMap} from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  User: Observable<User>;
   token: string;
 
-  constructor(private router: Router) { }
-
-  signUpUser(email: string, password: string){
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .catch(
-      error => console.log(error)
-    );
+  constructor(
+    public afAuth: AngularFireAuth,
+    private firestore: AngularFirestore,
+    private router: Router
+  ) { 
+    //Se comprueba si el usuario esta correctamente logeado en la aplicación:
+    this.User = this.afAuth.authState.pipe(switchMap(User => 
+      {
+        //Usuario conectado:
+        if( User )
+        {
+          return this.firestore.doc<User>(`users/${User.uid}`).valueChanges();
+        }
+        //Usuario desconectado:
+        else 
+        {
+          return of(null);
+        }
+      }))
   }
 
-  signInUser(email: string, password: string){
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(
-      response => {
-        this.router.navigate(['manage']);
-        firebase.auth().currentUser.getIdToken().then(
-          (token: string) => this.token=token
-        )
-      }
-    ).catch(
-      error => console.log(error)
-    );
+  public signUp(email, password)
+  {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+  }
+  public emailAndPassword(email, password)
+  {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
-  getToken(){
-    firebase.auth().currentUser.getIdToken().then(
-      (token: string) => this.token=token
-    );
-    return this.token;
+  //Método para cerrar sesión:
+  public signOut() 
+  {
+    this.afAuth.auth.signOut().then(() => 
+    this.router.navigate(['/']));
   }
 
-  isAutheticated(){
-    return this.token!=null
-  }
-
-  logoutUser(){
-    firebase.auth().signOut();
-    this.token=null;
-  }
+    //Recuperar contraseña
+    public ForgotPassword(email)
+    {
+      this.afAuth.auth.sendPasswordResetEmail(email).then(function() {
+      alert("email sent")
+      }).catch(function(error) {
+        alert(error.message);
+      });
+    }
 }

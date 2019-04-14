@@ -1,3 +1,14 @@
+    
+<!-- Determina si el usuario esta autenticado o es un invitado-->
+<div *ngIf="auth.User | async; then authenticated else noauthenticated"></div>
+
+<!-- Se usa el #authenticated para renderisar el template dependiendo de la respuesta del servicio auth de firestore -->
+<!-- Esto con tal de poder hacer uso de una navegación basada en roles-->
+<ng-template #noauthenticated>
+    <app-login></app-login>
+</ng-template>
+
+<ng-template #authenticated>
 <mat-divider></mat-divider>
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar back">
@@ -16,12 +27,6 @@
             <div fxShow="true" fxHide.lt-md="true" fxLayout="row">
                 <!-- The following menu items will be hidden on both SM and XS screen sizes -->
                 <nav mat-tab-nav-bar>
-                    <a mat-tab-link [routerLink]="['home']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" [attr.tabindex]="rla.isActive ? 0 : -1" [class.list-item-active]="rla.isActive">
-                        <mat-icon>map</mat-icon>
-                        &nbsp;Inicio
-                    </a>
-                </nav>
-                <nav mat-tab-nav-bar>
                     <a mat-tab-link [routerLink]="['us']" routerLinkActive #rla1="routerLinkActive" [active]="rla1.isActive" [attr.tabindex]="rla1.isActive ? 0 : -1" [class.list-item-active]="rla1.isActive">
                         <mat-icon>person</mat-icon>
                         &nbsp;Perfil
@@ -34,7 +39,7 @@
                     </a>
                 </nav>
                 <nav mat-tab-nav-bar>
-                    <a mat-tab-link [routerLink]="['contact']" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive" [attr.tabindex]="rla3.isActive ? 0 : -1" [class.list-item-active]="rla3.isActive">
+                    <a mat-tab-link (click)="LogOut()">
                         <mat-icon>power_settings_new</mat-icon>
                         &nbsp;Desconectarse
                     </a>
@@ -70,7 +75,7 @@
                     </a>
                 </nav>
                 <nav mat-tab-nav-bar>
-                    <a mat-tab-link (click)="sidenav.toggle()" [routerLink]="['contact']" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive" [attr.tabindex]="rla3.isActive ? 0 : -1" [class.list-item-active]="rla3.isActive">
+                    <a mat-tab-link (click)="LogOut()">
                         <mat-icon>power_settings_new</mat-icon>
                         &nbsp;Desconectarse
                     </a>
@@ -84,3 +89,4 @@
     </mat-sidenav-container>
 
 </div>
+</ng-template>
