@@ -5,4 +5,5 @@ export class Organization {
   image: string;
   imageUrl: string;
   rate: number;
+
 }
