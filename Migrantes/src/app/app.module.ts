@@ -34,6 +34,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 import {environment} from "../environments/environment";
 import { OrganizationsComponent } from './components/organizations/organizations.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 export const config = environment.firebaseConfig;
@@ -43,6 +44,7 @@ export const config = environment.firebaseConfig;
     LoginComponent,
     NavbarComponent,
     OrganizationsComponent,
+    PerfilComponent,
 
   ],
   imports: [
