@@ -25,7 +25,8 @@ export class OrganizationsComponent implements OnInit {
     type: "Water distribution",
     image: "Alter",
     imageUrl: "",
-    rate: 50,
+    rate: 5,
+
   },
 ];
 
@@ -42,6 +43,12 @@ export class OrganizationsComponent implements OnInit {
     return this.rate;
   }
 
+  ratingTemporal(organization: any){
+    return organization.rate*10;
+  }
   
+  onSubmit(){
+
+  }
 
 }
