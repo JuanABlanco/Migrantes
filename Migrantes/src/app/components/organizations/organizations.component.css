@@ -1,4 +1,5 @@
 :host {
+    display: inline;
     margin: 0px 0px;
 }
 
@@ -6,5 +7,21 @@
     max-width: 30vw;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2vh;
+    background-color: rgba(255, 255, 255, 0.507);
+}
+
+mat-card-header {
+    text-align: center;
+}
+
+mat-card-title,
+mat-card-content {
+    justify-content: center;
     margin-top: 2vh;
+}
+
+.back {
+    background: url('/assets/Torres.jpg');
+    height: 95vh;
 }

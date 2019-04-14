@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 // Componentes:
 import { LoginComponent } from './components/login/login.component';
 import { OrganizationsComponent } from './components/organizations/organizations.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 // import { HomeComponent } from './components/home/home.component';
 // import { UsComponent } from './components/us/us.component';
 // import { EmbarcaderoComponent } from './components/embarcadero/embarcadero.component';
@@ -12,6 +13,7 @@ import { OrganizationsComponent } from './components/organizations/organizations
 const ROUTES: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'dashboard', component: OrganizationsComponent},
+    {path: 'perfil', component: PerfilComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'login'},
 
 //         {path: 'home', component: HomeComponent},
